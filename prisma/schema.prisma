@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 model List {
@@ -21,11 +21,12 @@ model List {
 }
 
 model Task {
-  id          Int     @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   title       String
   description String
   status      String
   authorId    Int
-  list        List   @relation(fields: [listId], references: [id])
+
   listId      Int
+  list        List   @relation(fields: [listId], references: [id])
 }
