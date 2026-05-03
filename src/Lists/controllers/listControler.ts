@@ -1,23 +1,13 @@
-import { Router } from "express";
+import { prisma } from "../../../lib/prisma";
+import { Request, Response } from "express";
 
-const router = Router();
+export const getList = (req: Request, res:Response) => {
+    res.send("getList")
+}
 
-router.post("/", () => {
-    
-});
-router.get("/", () => {
+export const postList = (req: Request, res:Response) => {
+    const data = req.body
 
-});
-
-
-
-
-
-
-
-
-
-
-
-
+    res.json(data)
+}
 
