@@ -19,7 +19,19 @@ Uma API REST desenvolvida para o gerenciamento de listas de tarefas, permitindo 
 Liste as funcionalidades implementadas.
 
 ## Como executar o projeto
-Explique o passo a passo para rodar o projeto localmente.
+
+npm install
+
+docker compose up -d
+
+criar arquivo .env
+e colocar: DATABASE_URL="postgresql://docker:docker@localhost:1234/polls"
+
+npx prisma migrate dev --name init
+
+npx prisma generate
+
+npm run dev
 
 ## Decisões tomadas
 Explique decisões importantes, como:
@@ -34,5 +46,4 @@ Comente decisões tomadas, dificuldades ou melhorias futuras.
 
 link para a documentaçao: https://app.swaggerhub.com/apis/none-68c-ba0/APIAVANTE/1.0
 
-## 📝 Exemplos de JSON
 
