@@ -1,4 +1,5 @@
 import app from "./app";
+// import main from "./seed";
 
 const PORT = 3000;
 

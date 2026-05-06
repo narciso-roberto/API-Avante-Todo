@@ -3,45 +3,73 @@ import { Request, Response } from "express";
 
 export const listController = {
   getTodasListas: async (req: Request, res: Response) => {
+    const listas = await prisma.list.findMany({
+      include: { tasks: true },
+    });
+
     return res.json({
       success: true,
+      data: listas,
     });
   },
 
   getLista: async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const parametros = req.params;
+    const idLista = Number(parametros.id);
+
+    const list = await prisma.list.findUnique({
+      where: { id: idLista },
+    });
 
     return res.json({
       success: true,
-      data: { id },
+      data: list,
     });
   },
 
   postLista: async (req: Request, res: Response) => {
-    const { title, description } = req.body;
+    const body = req.body;
+
+    const list = await prisma.list.create({
+      data: body,
+    });
+
+    console.log(list)
 
     return res.status(201).json({
       success: true,
-      data: { title, description },
+      data: list,
     });
   },
 
   putLista: async (req: Request, res: Response) => {
-    const { id } = req.params;
-    const { title, description } = req.body;
+    const parametros = req.params;
+    const body = req.body;
+    const idLista = Number(parametros.id);
+
+    const listaAtualizada = await prisma.list.update({
+      where: { id: idLista },
+      data: body,
+    });
 
     return res.json({
       success: true,
-      data: { id, title, description },
+      data: listaAtualizada,
     });
   },
 
   deleteLista: async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const parametros = req.params;
+    const idLista = Number(parametros.id);
+
+    const deletedList = await prisma.list.delete({
+      where: { id: idLista },
+    });
 
     return res.json({
       success: true,
-      message: `List ${id} deleted`,
+      message: `Lista ${idLista} deleteda`,
+      data: deletedList,
     });
   },
 };

@@ -12,6 +12,7 @@ datasource db {
   provider = "postgresql"
 }
 
+
 model List {
   id          Int    @id @default(autoincrement())
   title       String
@@ -26,7 +27,7 @@ model Task {
   description String
   status      String
   createdAt   DateTime
-  finishedAt  DateTime?
+  finishedAt  DateTime
 
   listId      Int
   list        List   @relation(fields: [listId], references: [id], onDelete: Cascade)
