@@ -1,6 +1,4 @@
 # API-Avante-Todo
-Esta é uma proposta de documentação completa para o seu projeto, estruturada em um modelo `README.md` pronto para ser utilizado no seu repositório do GitHub.
-
 ---
 
 # 📝 Gerenciador de Listas e Tarefas API
