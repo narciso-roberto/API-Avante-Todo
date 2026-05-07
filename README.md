@@ -57,7 +57,6 @@ npm run dev
 ```
 
 ## Decisões tomadas
-Explique decisões importantes, como:
 - Foi utilizado **Docker** para facilitar a configuração e execução do banco de dados, garantindo um ambiente mais padronizado para o projeto.
 
 - Foi utilizada a ORM **Prisma** para simplificar as operações no banco de dados, facilitar a modelagem das entidades e fornecer melhor integração com TypeScript.
