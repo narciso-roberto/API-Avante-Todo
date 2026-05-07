@@ -1,7 +1,7 @@
-# API-Avante-Todo
+# Case Técnico - Desenvolvedor(a) de Software
 ---
 
-# 📝 Gerenciador de Listas e Tarefas API
+# 📝 Descrição
 
 Uma API REST desenvolvida para o gerenciamento de listas de tarefas, permitindo a organização de afazeres em categorias específicas com suporte a operações completas de CRUD (Create, Read, Update, Delete) e relacionamentos relacionais.
 
